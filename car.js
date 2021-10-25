@@ -35,10 +35,10 @@ class Car {
 
 // 02 tv
 class Tv {
-    constructor(brand, channel, volume) {
+    constructor(brand) {
         this.brand= brand,
-        this.channel= channel,
-        this.volume= volume
+        this.channel= 1,
+        this.volume= 50
     }
 
     volumeUp(number) {
@@ -53,15 +53,10 @@ class Tv {
         }
     }
 
-    channelUp(number) {
-        if((this.channel + number) >= 0 && (this.channel + number)<50){
-            this.channel += number
-        }
-    }
 
-    channelDown(number) {
-        if((this.channel - number) >= 0 && (this.channel - number)<50){
-            this.channel -= number
+    changechannel(number) {
+        if((number) > 0 && (number<50)){
+            this.channel = number
         }
     }
 
@@ -75,10 +70,10 @@ class Tv {
     }
 }
 
-let sony = new Tv ("sony",12,90)
+let sony = new Tv ("sony")
 console.log(sony);
-sony.channelDown(12)
+sony.changechannel(1)
 sony.volumeUp(10)
 sony.describe()
-sony.reset()
-console.log(sony);
+// sony.reset()
+// console.log(sony);
